@@ -52,17 +52,18 @@ export const LabelText = styled.label`
   font-size: 14px;
   margin: 0px 0px 40px 0px;
 `
-export const Checkbox = styled.input`
-  display: block;
-  height: 18px;
-  width: 18px;
-`
+
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start
   align-items: center;
   margin-top: 10px;
+`
+export const Checkbox = styled.input`
+  display: block;
+  height: 18px;
+  width: 18px;
 `
 export const CheckboxLabel = styled.label`
   font-family: 'Roboto';
