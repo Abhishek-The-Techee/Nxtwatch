@@ -10,6 +10,11 @@ import ThemeAndVideoContext from './context/ThemeAndVideoContext'
 class App extends Component {
   state = {
     isDarkTheme: false,
+    activeTab: 'Home',
+  }
+
+  changeActiveTab = tab => {
+    this.setState({activeTab: tab})
   }
 
   toggleTheme = () => {
@@ -17,12 +22,14 @@ class App extends Component {
   }
 
   render() {
-    const {isDarkTheme} = this.state
+    const {isDarkTheme, activeTab} = this.state
 
     return (
       <ThemeAndVideoContext.Provider
         value={{
           isDarkTheme,
+          activeTab,
+          changeTab: this.changeActiveTab,
           toggleTheme: this.toggleTheme,
         }}
       >

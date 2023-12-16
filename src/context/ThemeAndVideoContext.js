@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ThemeAndVideoContext = React.createContext({
-  isDarkTheme: true,
+  isDarkTheme: false,
   savedVideo: [],
   activeTab: 'Home',
   toggleTheme: () => {},
