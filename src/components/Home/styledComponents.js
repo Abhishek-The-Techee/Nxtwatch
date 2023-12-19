@@ -93,3 +93,21 @@ export const SearchBtn = styled.button`
   outline: none;
   border: 1px solid #94a3b8;
 `
+export const LoaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 206px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
+`
+export const SuccessContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    margin-left: 207px;
+  }
+`
