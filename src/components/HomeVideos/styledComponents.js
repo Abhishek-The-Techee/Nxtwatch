@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HomeVideosList = styled.ul`
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
 `
 export const NoVideosContainer = styled.div`
   display: flex;

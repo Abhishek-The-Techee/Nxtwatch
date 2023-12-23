@@ -7,6 +7,7 @@ import Home from './components/Home'
 import FailureView from './components/FailureView'
 
 import ThemeAndVideoContext from './context/ThemeAndVideoContext'
+import ProtectedRoute from './components/ProtectedRoute'
 
 class App extends Component {
   state = {
@@ -36,7 +37,7 @@ class App extends Component {
       >
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Home} />
+          <ProtectedRoute exact path="/" component={Home} />
           <Route component={FailureView} />
         </Switch>
       </ThemeAndVideoContext.Provider>
