@@ -107,6 +107,7 @@ export const SuccessContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: 0px;
   @media screen and (min-width: 768px) {
     margin-left: 207px;
   }

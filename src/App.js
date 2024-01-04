@@ -5,6 +5,7 @@ import './App.css'
 import Login from './components/Login'
 import Home from './components/Home'
 import FailureView from './components/FailureView'
+import TrendingVideos from './components/TrendingVideos'
 
 import ThemeAndVideoContext from './context/ThemeAndVideoContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -38,6 +39,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/trending" component={TrendingVideos} />
           <Route component={FailureView} />
         </Switch>
       </ThemeAndVideoContext.Provider>

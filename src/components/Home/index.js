@@ -112,6 +112,21 @@ class Home extends Component {
     )
   }
 
+  renderHomeVideosView = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSuccessView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
     const {searchInput, displayBanner} = this.state
 
@@ -158,7 +173,7 @@ class Home extends Component {
                     <AiOutlineSearch size={25} />
                   </SearchBtn>
                 </SearchContainer>
-                {this.renderSuccessView()}
+                {this.renderHomeVideosView()}
               </HomeContainer>
             </>
           )
