@@ -9,12 +9,16 @@ import Navbar from '../SideNavbar'
 
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 import FailureView from '../FailureView'
+import TrendingVideoCard from '../TrendingVideoCards'
 
 import {
   TrendingVideosContainer,
   TrendingTitleContainer,
   TrendingIcon,
   TrendingHeading,
+  TrendingDataContainer,
+  LoaderContainer,
+  TrendingSuccessContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -72,6 +76,24 @@ class TrendingVideos extends Component {
 
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
+  renderLoadingView = () => (
+    <LoaderContainer>
+      <Loader type="ThreeDots" size={35} color="#3b82f6" />
+    </LoaderContainer>
+  )
+
+  renderSuccessView = () => {
+    const {trendingVideos} = this.state
+
+    return (
+      <TrendingSuccessContainer>
+        {trendingVideos.map(each => (
+          <TrendingVideoCard key={each.id} Video={each} />
+        ))}
+      </TrendingSuccessContainer>
+    )
+  }
+
   render() {
     return (
       <ThemeAndVideoContext.Consumer>
@@ -93,6 +115,9 @@ class TrendingVideos extends Component {
                   </TrendingIcon>
                   <TrendingHeading color={textColor}>Trending</TrendingHeading>
                 </TrendingTitleContainer>
+                <TrendingDataContainer>
+                  {this.renderSuccessView()}
+                </TrendingDataContainer>
               </TrendingVideosContainer>
             </>
           )

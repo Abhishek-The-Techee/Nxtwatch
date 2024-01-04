@@ -4,7 +4,7 @@ export const TrendingVideosContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100vh;
+  padding-bottom: 20px;
   margin-top: 65px;
   padding-left: 207px;
   background-color: ${props => props.bgColor};
@@ -47,4 +47,28 @@ export const TrendingHeading = styled.h1`
   @media screen and (max-width: 768px) {
     font-size: 24px;
   }
+`
+export const TrendingDataContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    margin-left: 350px;
+  }
+`
+export const LoaderContainer = styled.div`
+  margin-left: 50%;
+  margin-top: 50%;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin-top: 200px;
+  }
+`
+export const TrendingSuccessContainer = styled.ul`
+  list-style-type: none;
 `
