@@ -54,12 +54,13 @@ export const TrendingDataContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (min-width: 768px) {
-    margin-left: 350px;
+    margin-top: 20px;
   }
 `
 export const LoaderContainer = styled.div`
-  margin-left: 50%;
-  margin-top: 50%;
+  margin-left: 500px;
+  margin-top: 35%;
+  height: 100vh;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -71,4 +72,8 @@ export const LoaderContainer = styled.div`
 `
 export const TrendingSuccessContainer = styled.ul`
   list-style-type: none;
+  @media screen and (max-width: 576px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 `

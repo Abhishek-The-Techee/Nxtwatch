@@ -49,7 +49,7 @@ class TrendingVideos extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
-    if (response.ok) {
+    if (response.ok === true) {
       const data = await response.json()
       const updatedData = data.videos.map(each => ({
         id: each.id,
@@ -57,14 +57,14 @@ class TrendingVideos extends Component {
         thumbnailUrl: each.thumbnail_url,
         name: each.channel.name,
         profileImageUrl: each.channel.profile_image_url,
-        viewCount: each.viewCount,
+        viewCount: each.view_count,
         publishedAt: each.published_at,
       }))
+      console.log(updatedData)
       this.setState({
         trendingVideos: updatedData,
         apiStatus: apiStatusConstants.success,
       })
-      console.log(updatedData)
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
@@ -94,6 +94,21 @@ class TrendingVideos extends Component {
     )
   }
 
+  renderTrendingView = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSuccessView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
     return (
       <ThemeAndVideoContext.Consumer>
@@ -116,7 +131,7 @@ class TrendingVideos extends Component {
                   <TrendingHeading color={textColor}>Trending</TrendingHeading>
                 </TrendingTitleContainer>
                 <TrendingDataContainer>
-                  {this.renderSuccessView()}
+                  {this.renderTrendingView()}
                 </TrendingDataContainer>
               </TrendingVideosContainer>
             </>
