@@ -7,6 +7,7 @@ import Home from './components/Home'
 import FailureView from './components/FailureView'
 import TrendingVideos from './components/TrendingVideos'
 import GamingVideos from './components/GamingVideos'
+import VideoDetailsView from './components/VideoDetailsView'
 
 import ThemeAndVideoContext from './context/ThemeAndVideoContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -42,6 +43,11 @@ class App extends Component {
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/trending" component={TrendingVideos} />
           <ProtectedRoute exact path="/gaming" component={GamingVideos} />
+          <ProtectedRoute
+            exact
+            path="/videos/:id"
+            component={VideoDetailsView}
+          />
           <Route component={FailureView} />
         </Switch>
       </ThemeAndVideoContext.Provider>

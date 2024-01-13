@@ -72,6 +72,8 @@ export const LoaderContainer = styled.div`
 `
 export const GamingSuccessContainer = styled.ul`
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
   @media screen and (max-width: 576px) {
     margin-left: 0px;
     margin-right: 0px;
