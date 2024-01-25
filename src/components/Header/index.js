@@ -1,4 +1,4 @@
-import {withRouter} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {BsMoon, BsBrightnessHigh} from 'react-icons/bs'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import Popup from 'reactjs-popup'
@@ -53,9 +53,15 @@ const Header = () => (
 
       return (
         <NavbarContainer bgColor={bgColor}>
-          <HeaderLogo src={logoImage} alt="Header Logo" />
+          <Link to="/">
+            <HeaderLogo src={logoImage} alt="website logo" />
+          </Link>
           <RightMenuOptionsContainer>
-            <ThemeBtn type="button" onClick={onClickChangeTheme}>
+            <ThemeBtn
+              type="button"
+              onClick={onClickChangeTheme}
+              data-testid="theme"
+            >
               {themeIcon}
             </ThemeBtn>
             <ProfileImg

@@ -20,7 +20,7 @@ export const TrendingVideoImage = styled.img`
     height: 250px;
   }
 `
-export const TrendingVideoHeading = styled.h1`
+export const TrendingVideoHeading = styled.p`
   color: ${props => props.color};
   font-family: 'Roboto';
   font-size: 20px;

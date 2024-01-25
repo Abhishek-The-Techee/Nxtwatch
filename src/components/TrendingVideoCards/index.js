@@ -34,10 +34,7 @@ const TrendingVideoCard = props => {
         return (
           <ItemLink to={`/videos/${id}`}>
             <TrendingVideoItem>
-              <TrendingVideoImage
-                src={thumbnailUrl}
-                alt="trending video image"
-              />
+              <TrendingVideoImage src={thumbnailUrl} alt="video thumbnail" />
               <VideoDetailsContainer>
                 <TrendingVideoHeading color={headingColor}>
                   {title}

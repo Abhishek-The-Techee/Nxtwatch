@@ -77,7 +77,7 @@ class TrendingVideos extends Component {
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
   renderLoadingView = () => (
-    <LoaderContainer>
+    <LoaderContainer data-testid="loader">
       <Loader type="ThreeDots" size={35} color="#3b82f6" />
     </LoaderContainer>
   )

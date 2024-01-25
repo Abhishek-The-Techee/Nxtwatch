@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import {AiFillHome} from 'react-icons/ai'
 import {HiFire} from 'react-icons/hi'
 import {SiYoutubegaming} from 'react-icons/si'
@@ -52,7 +53,7 @@ class Navbar extends Component {
             <NavbarLgContainer bgColor={bgColor}>
               <NavOptionsContainer>
                 <NavOption>
-                  <NavLink to="/">
+                  <Link to="/">
                     <NavLinkContainer
                       key="home"
                       activeTabBgColor={
@@ -66,10 +67,10 @@ class Navbar extends Component {
                       />
                       <NavTextEl color={textColor}>Home</NavTextEl>
                     </NavLinkContainer>
-                  </NavLink>
+                  </Link>
                 </NavOption>
                 <NavOption>
-                  <NavLink to="/trending">
+                  <Link to="/trending">
                     <NavLinkContainer
                       key="trending"
                       activeTabBgColor={
@@ -83,10 +84,10 @@ class Navbar extends Component {
                       />
                       <NavTextEl color={textColor}>Trending</NavTextEl>
                     </NavLinkContainer>
-                  </NavLink>
+                  </Link>
                 </NavOption>
                 <NavOption>
-                  <NavLink to="/gaming">
+                  <Link to="/gaming">
                     <NavLinkContainer
                       key="trending"
                       activeTabBgColor={
@@ -100,10 +101,10 @@ class Navbar extends Component {
                       />
                       <NavTextEl color={textColor}>Gaming</NavTextEl>
                     </NavLinkContainer>
-                  </NavLink>
+                  </Link>
                 </NavOption>
                 <NavOption>
-                  <NavLink to="/saved-videos">
+                  <Link to="/saved-videos">
                     <NavLinkContainer
                       key="saved"
                       activeTabBgColor={
@@ -115,9 +116,9 @@ class Navbar extends Component {
                         size={28}
                         color={activeTab === 'Saved' ? '#ff0b37' : '#909090'}
                       />
-                      <NavTextEl color={textColor}>Saved</NavTextEl>
+                      <NavTextEl color={textColor}>Saved videos</NavTextEl>
                     </NavLinkContainer>
-                  </NavLink>
+                  </Link>
                 </NavOption>
               </NavOptionsContainer>
               <ContactDetailsContainer>

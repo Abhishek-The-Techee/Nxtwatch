@@ -16,6 +16,7 @@ class App extends Component {
   state = {
     isDarkTheme: false,
     activeTab: 'Home',
+    savedVideos: [],
   }
 
   changeActiveTab = tab => {
@@ -26,16 +27,37 @@ class App extends Component {
     this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
   }
 
+  addVideo = video => {
+    const {savedVideos} = this.state
+    const index = savedVideos.findIndex(eachVideo => eachVideo.id === video.id)
+    if (index === -1) {
+      this.setState({savedVideos: [...savedVideos, video]})
+    } else {
+      savedVideos.splice(index, 1)
+      this.setState({savedVideos})
+    }
+  }
+
+  removeVideo = id => {
+    const {savedVideos} = this.state
+    const updatedSavedVideos = savedVideos.filter(
+      eachVideo => eachVideo.id !== id,
+    )
+    this.setState({savedVideos: updatedSavedVideos})
+  }
+
   render() {
-    const {isDarkTheme, activeTab} = this.state
+    const {savedVideos, isDarkTheme, activeTab} = this.state
 
     return (
       <ThemeAndVideoContext.Provider
         value={{
           isDarkTheme,
           activeTab,
+          savedVideos,
           changeTab: this.changeActiveTab,
           toggleTheme: this.toggleTheme,
+          addVideo: this.addVideo,
         }}
       >
         <Switch>

@@ -123,7 +123,7 @@ class Login extends Component {
         <LoginFormContainer onSubmit={this.onSubmitForm}>
           <FormLogo
             src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-            alt="form logo"
+            alt="website logo"
           />
           <InputFieldsContainer>{this.renderUserName()}</InputFieldsContainer>
           <InputFieldsContainer>{this.renderPassword()}</InputFieldsContainer>

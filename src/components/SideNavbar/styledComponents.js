@@ -53,7 +53,7 @@ export const ContactDetailsContainer = styled.div`
   flex-direction: column;
   padding-left: 15px;
 `
-export const ContactHeading = styled.h1`
+export const ContactHeading = styled.p`
   font-family: 'Roboto';
   color: ${props => props.color};
   font-size: 18px;

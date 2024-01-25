@@ -7,6 +7,7 @@ import Navbar from '../SideNavbar'
 import FailureView from '../FailureView'
 
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
+import PlayVideoView from '../PlayVideoView'
 
 import {VideoDetailsContainer, LoaderContainer} from './styledComponents'
 
@@ -92,21 +93,32 @@ class VideoDetailsView extends Component {
 
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
+  renderPlayVideoView = () => {
+    const {videoDetails, isLiked, isDisLiked} = this.state
+    return (
+      <PlayVideoView
+        videoDetails={videoDetails}
+        clickLiked={this.onClickLiked}
+        clickDisLiked={this.onClickDisLiked}
+        isLiked={isLiked}
+        isDisLiked={isDisLiked}
+      />
+    )
+  }
+
   render() {
     return (
       <ThemeAndVideoContext.Consumer>
         {value => {
           const {isDarkTheme} = value
           const bgColor = isDarkTheme ? '#000000' : '#ebebeb'
-          const textColor = isDarkTheme ? '#f9f9f9' : '#231f20'
-          const iconBgColor = isDarkTheme ? '#000000' : '#d7dfe9'
 
           return (
             <>
               <Header />
               <Navbar />
               <VideoDetailsContainer bgColor={bgColor}>
-                {this.renderLoadingView()}
+                {this.renderPlayVideoView()}
               </VideoDetailsContainer>
             </>
           )
